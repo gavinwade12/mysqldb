@@ -37,15 +37,15 @@ func (db *DB) BeginTx() (*Tx, error) {
 }
 
 func (db *DB) Exec(query string, args ...interface{}) (sql.Result, error) {
-	return db.db.Exec(query, args)
+	return db.db.Exec(query, args...)
 }
 
 func (db *DB) Query(query string, args ...interface{}) (Rows, error) {
-	return db.db.Query(query, args)
+	return db.db.Query(query, args...)
 }
 
 func (db *DB) QueryRow(query string, args ...interface{}) Row {
-	return db.db.QueryRow(query, args)
+	return db.db.QueryRow(query, args...)
 }
 
 // Tx wraps a sql Tx.
@@ -62,15 +62,15 @@ func (tx *Tx) Commit() error {
 }
 
 func (tx *Tx) Exec(query string, args ...interface{}) (sql.Result, error) {
-	return tx.tx.Exec(query, args)
+	return tx.tx.Exec(query, args...)
 }
 
 func (tx *Tx) Query(query string, args ...interface{}) (Rows, error) {
-	return tx.tx.Query(query, args)
+	return tx.tx.Query(query, args...)
 }
 
 func (tx *Tx) QueryRow(query string, args ...interface{}) Row {
-	return tx.tx.QueryRow(query, args)
+	return tx.tx.QueryRow(query, args...)
 }
 
 type Scanner interface {
